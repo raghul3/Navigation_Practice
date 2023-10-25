@@ -60,10 +60,15 @@ fun BaseMenuScreen(
                 item = item,
                 selectedItemName = selectedItemName,
                 onClick = onClick,
-                modifier = Modifier.selectable(
-                    selected = selectedItemName == item.name,
-                    onClick = onClick
-                )
+                modifier = Modifier
+                    .selectable(
+                        selected = selectedItemName == item.name,
+                        onClick = onClick
+                    )
+                    .padding(
+                        start = dimensionResource(id = R.dimen.padding_medium),
+                        end = dimensionResource(id = R.dimen.padding_medium)
+                    )
             )
         }
 
@@ -74,7 +79,9 @@ fun BaseMenuScreen(
                 // Assert not null bc next button is not enabled unless selectedItem is not null.
                 onNextButtonClicked()
             },
-            modifier = Modifier.fillMaxWidth().padding(dimensionResource(R.dimen.padding_medium))
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(R.dimen.padding_medium))
         )
     }
 }

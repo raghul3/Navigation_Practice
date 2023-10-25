@@ -67,7 +67,7 @@ class OrderViewModel : ViewModel() {
                 entree = if (newItem is EntreeItem) newItem else currentState.entree,
                 sideDish = if (newItem is SideDishItem) newItem else currentState.sideDish,
                 accompaniment =
-                    if (newItem is AccompanimentItem) newItem else currentState.accompaniment
+                if (newItem is AccompanimentItem) newItem else currentState.accompaniment
             )
         }
     }
